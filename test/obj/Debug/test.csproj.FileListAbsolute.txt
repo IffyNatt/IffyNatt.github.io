@@ -1,0 +1,6 @@
+c:\users\iedward\documents\visual studio 2013\Projects\test\test\bin\test.dll.config
+c:\users\iedward\documents\visual studio 2013\Projects\test\test\bin\test.dll
+c:\users\iedward\documents\visual studio 2013\Projects\test\test\bin\test.pdb
+c:\users\iedward\documents\visual studio 2013\Projects\test\test\obj\Debug\test.dll
+c:\users\iedward\documents\visual studio 2013\Projects\test\test\obj\Debug\test.pdb
+C:\Users\iedward\documents\visual studio 2013\Projects\test\test\obj\Debug\test.csprojResolveAssemblyReference.cache
