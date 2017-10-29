@@ -248,6 +248,11 @@ background-color: whitesmoke;
     margin-top :35px;
 }
 
+.refresh{
+    margin-left: 15px;
+    font-size: 26px;
+    padding-right: 10px
+}
 
 /*-------------------------*/
     /* OUR PRODUCTS SECTION */
@@ -303,7 +308,9 @@ background-color: whitesmoke;
 .contact-header{
     padding-top: 30px;
 }
-
+.col-form-legend{
+    border-bottom: none;
+}
 /*-------------------------*/
     /* FOOTER SECTION */
 /*--------------------------- */
@@ -332,3 +339,78 @@ background-color: whitesmoke;
 }
 
 
+
+
+
+/* The Modal (background) */
+/* Bordered form */
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.logFooter{
+    margin-top: 10px;
+}
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+}
+
+/* Add padding to containers */
+
+/* The "Forgot password" text */
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+
+/** Email Messages **/
+.messages{
+    width:60%;
+    padding-top: 5px;
+    margin:0 auto;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.successSend{
+    background-color: rgba(50, 205, 50, 0.53);
+}
+
+.failureSend{
+    background-color: rgba(255, 0, 0, 0.53);
+}

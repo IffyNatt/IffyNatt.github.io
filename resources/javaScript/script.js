@@ -15,15 +15,9 @@ $(document).ready(function(){
     });
 
 
-    /*Complaint button Page scroll Script
 
-    $('.go-to-complaince-section').click(function(){
-        $('html, body').animate({scrollTop:$('.complaince-section').offset().top},1000);
-    });
-
-
-
-    /*Header Nav scroll */
+    /*Header Nav scroll script */
+    
     $('a[href*="#"]')
     // Remove links that don't actually link to anything
     .not('[href="#"]')
@@ -59,6 +53,6 @@ $(document).ready(function(){
         });
       }
     }
-    });    
+    });      
 
 });

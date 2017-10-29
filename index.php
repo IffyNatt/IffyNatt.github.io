@@ -231,12 +231,15 @@
                                     <form class="contact_form" method="post" action="mailer.php">
                                         <div class="row">
                                             <?php
-                                            <div class="messages successSend">
-                                                <p>Thank you for your email. We will get in touch soon!</p>
-                                            </div>
-                                           <!-- <div class="messages failureSend">
-                                                <p>Ooops! somethign went wrong, please try again</p>
-                                            </div>-->
+                                                if($_GET['success']==1)
+                                                    {
+                                                        echo "<div class=\"messages successSend\">Thank you for your email. We will get in touch soon!</div>";
+                                                    }
+
+                                                if($_GET['success']== -1)
+                                                    {
+                                                        echo "<div class=\"messages failureSend\">Ooops! somethign went wrong, please try again</div>";
+                                                    }
                                             ?>
                                         </div>
                                     
