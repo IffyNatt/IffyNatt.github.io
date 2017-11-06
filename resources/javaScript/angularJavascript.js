@@ -15,7 +15,7 @@ var complaince_questions=[
         ];
 
 
-app.controller('myCtrl', function($scope) 
+app.controller('myCtrl', function($scope, $http) 
    {   
         $scope.sumTotal = 0;
             var complaince_id =0;
@@ -197,11 +197,37 @@ app.controller('myCtrl', function($scope)
     
     $scope.open =function(){
         document.getElementById('id01').style.display='block';
-    }
+    };
     
     $scope.closeLogin =function(){
         document.getElementById('id01').style.display='none';
            
-    }
+    };
+    
+
+
+      $scope.formData={name:"iffy"};  
+
+    $scope.formSubmit = function(){
+                $http({
+                  method  : 'POST',
+                  url     : 'mailer.php',
+                  data    : $.param($scope.formData),  // pass in data as strings
+                  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+                 })
+                  .success(function(data) {
+                    console.log('iffy');
+
+                    if (success==-1) {
+                      // if not successful, bind errors to error variables
+                        $scope.message= 'Ooops, something went wrong, please try again'
+                    } else {
+                      // if successful, bind success message to message
+                      $scope.message = 'Thank You for you email, we will get in touch very shortly'
+                    }
+                  });
+
+            }
+    
     
 });

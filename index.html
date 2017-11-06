@@ -228,28 +228,19 @@
                         <div class="col col-sm-6 contact-form-map">
                             <h3 class="contact-header">We want to Hear From You</h3>
                             <div class="container">
-                                    <form class="contact_form" method="post" action="mailer.php">
-                                        <div class="row">
-                                            <?php
-                                            <div class="messages successSend">
-                                                <p>Thank you for your email. We will get in touch soon!</p>
-                                            </div>
-                                           <!-- <div class="messages failureSend">
-                                                <p>Ooops! somethign went wrong, please try again</p>
-                                            </div>-->
-                                            ?>
-                                        </div>
+                                    <form class="contact_form" method="POST" action="mailer.php">
                                     
                                         <div class="form-group row">
+                                            <div >{{messages}}</div>
                                           <label for="name" class="col-sm-4 col-form-label">Name</label>
                                           <div class="col-sm-8">
-                                            <input type="text" class="form-control" id="name" name='name' placeholder="Name" required>
+                                            <input type="text" class="form-control" id="name" name='name' placeholder="Name" required ng-model='formData.name'>
                                           </div>
                                         </div>
                                         <div class="form-group row">
                                           <label for="email" class="col-sm-4 col-form-label">Email</label>
                                           <div class="col-sm-8">
-                                            <input type="email" class="form-control" id="email" name = 'email' placeholder="Email" required>
+                                            <input type="email" class="form-control" id="email" name = 'email' placeholder="Email" required ng-model='formData.email'>
                                           </div>
                                         </div>
                                         <fieldset class="form-group">
@@ -258,25 +249,25 @@
                                             <div class="col-sm-8">
                                               <div class="form-check">
                                                 <label class="form-check-label">
-                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size1" value="option1" checked>
+                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size1" value="option1" checked ng-model='formData.size'>
                                                   0 &#45;50
                                                 </label>
                                               </div>
                                               <div class="form-check">
                                                 <label class="form-check-label">
-                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size2" value="option2">
+                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size2" value="option2" ng-model='formData.size'>
                                                   50&#45;150
                                                 </label>
                                               </div>
                                               <div class="form-check">
                                                 <label class="form-check-label">
-                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size3" value="option3">
+                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size3" value="option3" ng-model='formData.size'>
                                                   150&#45;500
                                                 </label>
                                               </div>
                                               <div class="form-check">
                                                 <label class="form-check-label">
-                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size4" value="option4">
+                                                  <input class="form-check-input" type="radio" name="size" id="organisation_size4" value="option4" ng-model='formData.size'>
                                                   500 &amp; above
                                                 </label>
                                               </div>
@@ -290,14 +281,14 @@
                                           <div class="col-sm-6">
                                             <div class="form-check">
                                               <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="interest1"> Workers Comp and Safety
+                                                <input class="form-check-input" type="checkbox" name="interest1" ng-model='formData.interest1'> Workers Comp and Safety
                                               </label>
                                             </div>
                                           </div>
                                           <div class="col-sm-6">
                                             <div class="form-check">
                                               <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="interest2"> General HR Services
+                                                <input class="form-check-input" type="checkbox" name="interest2" ng-model = formData.interest2> General HR Services
                                               </label>
                                             </div>
                                             </div>
@@ -307,21 +298,21 @@
                                            <div class="col-sm-6">
                                             <div class="form-check">
                                               <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="interest3"> HR Audit
+                                                <input class="form-check-input" type="checkbox" name="interest3" ng-model='formData.interest3'> HR Audit
                                               </label>
                                             </div>
                                           </div>
                                            <div class="col-sm-6">
                                             <div class="form-check">
                                               <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" name="interest4"> Worker Performance Appriasal
+                                                <input class="form-check-input" type="checkbox" name="interest4" ng-model='formData.interest4'> Worker Performance Appriasal
                                               </label>
                                             </div>
                                           </div>
                                         </div>
                                         <div class="form-group row">
                                           <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary">Email</button>
+                                            <button type="submit" class="btn btn-primary" ng-submit="formSubmit()">Email</button>
                                           </div>
                                         </div>
                                   </form>
@@ -369,12 +360,13 @@
                             </div>
                         </div>
                      </footer>         
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>ss
         <script src="vendors/javaScript/jquery-3.2.1.min.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
         <script src="vendors/javaScript/bootstrap.min.js"></script>
+
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfKMVQsQn8i5j50CSx3v8quSdjDQhI_pg"></script>
+         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfKMVQsQn8i5j50CSx3v8quSdjDQhI_pg"></script>
          <script src="vendors/javaScript/gmaps.js"></script>
          <script src="resources/javaScript/script.js"></script>
         <script src="resources/javaScript/angularJavascript.js"></script>
