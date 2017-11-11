@@ -11,10 +11,11 @@
     $Interest4 = trim($_POST["interest4"]);
 
     // Check the data.
-    if (empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+   /* if (empty($name) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: https://iffynatt.github.io/#home.php?success=-1#get-in-touch");
         exit;
-    }
+    } */
 
     // Set the recipient email address. Update this to YOUR desired email address.
     $recipient = "iffes2u@gmail.com";
@@ -38,5 +39,6 @@
     mail($recipient, $subject, $email_content, $email_headers);
     
     // Redirect to the index.html page with success code
-    header("Location: https://iffynatt.github.io/#home.php?success=1#get-in-touch");
+   // $headers("Location: https://iffynatt.github.io/index.html?success=1#get-in-touch");
+
 ?>

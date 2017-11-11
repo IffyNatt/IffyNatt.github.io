@@ -228,7 +228,7 @@
                         <div class="col col-sm-6 contact-form-map">
                             <h3 class="contact-header">We want to Hear From You</h3>
                             <div class="container">
-                                    <form class="contact_form" method="POST" action="mailer.php">
+                                    <form name="userForm" class="contact_form">
                                     
                                         <div class="form-group row">
                                             <div >{{messages}}</div>
@@ -312,7 +312,7 @@
                                         </div>
                                         <div class="form-group row">
                                           <div class="col-sm-10">
-                                            <button type="submit" class="btn btn-primary" ng-submit="formSubmit()">Email</button>
+                                            <button type="submit" class="btn btn-primary" ng-click="formSubmit(userForm.$valid)" ng-disabled="userForm.$invalid">Email</button>
                                           </div>
                                         </div>
                                   </form>
@@ -364,12 +364,13 @@
         <script src="vendors/javaScript/jquery-3.2.1.min.js"></script>
          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" ></script>
         <script src="vendors/javaScript/bootstrap.min.js"></script>
-
+        <script src="mailer.php"></script>
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfKMVQsQn8i5j50CSx3v8quSdjDQhI_pg"></script>
+         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDfKMVQsQn8i5j50CSx3v8quSdjDQhI_pg"></script>
          <script src="vendors/javaScript/gmaps.js"></script>
          <script src="resources/javaScript/script.js"></script>
         <script src="resources/javaScript/angularJavascript.js"></script>
+
 
     </body>
 </html>

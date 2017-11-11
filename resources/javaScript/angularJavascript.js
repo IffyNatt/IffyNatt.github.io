@@ -15,7 +15,7 @@ var complaince_questions=[
         ];
 
 
-app.controller('myCtrl', function($scope, $http) 
+app.controller('myCtrl', ['$scope','$http', function($scope, $http) 
    {   
         $scope.sumTotal = 0;
             var complaince_id =0;
@@ -206,28 +206,26 @@ app.controller('myCtrl', function($scope, $http)
     
 
 
-      $scope.formData={name:"iffy"};  
+      $scope.formData={};  
+      $scope.url = 'mailer.php';
+    $scope.formSubmit = function(isValid){
 
-    $scope.formSubmit = function(){
-                $http({
-                  method  : 'POST',
-                  url     : 'mailer.php',
-                  data    : $.param($scope.formData),  // pass in data as strings
-                  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-                 })
-                  .success(function(data) {
-                    console.log('iffy');
-
-                    if (success==-1) {
-                      // if not successful, bind errors to error variables
-                        $scope.message= 'Ooops, something went wrong, please try again'
-                    } else {
-                      // if successful, bind success message to message
-                      $scope.message = 'Thank You for you email, we will get in touch very shortly'
-                    }
-                  });
-
+            if (isValid) {
+                $http.post($scope.url, {"name": $scope.formData.name, "email": $scope.formData.email, "size": $scope.formData.size, "interest1": $scope.formData.interest1}).
+                        success(function (data, status) {
+                            $scope.status = status;
+                            $scope.data = data;
+                            $scope.message = "Thanks for your mail, we will get in touch shortly" //data; // Show result from server in our <pre></pre> element
+                    alert('for is valid');
+                        })
+            } else {
+                alert('Form is not valid');
             }
+ 
+        }
+                
+
     
     
-});
+    
+}]);
