@@ -211,12 +211,13 @@ app.controller('myCtrl', ['$scope','$http', function($scope, $http)
     $scope.formSubmit = function(isValid){
 
             if (isValid) {
-                $http.post($scope.url, {"name": $scope.formData.name, "email": $scope.formData.email, "size": $scope.formData.size, "interest1": $scope.formData.interest1}).
-                        success(function (data, status) {
+                $http.post($scope.url, {"name": $scope.formData.name, "email": $scope.formData.email, 
+                                       "size": $scope.formData.size, "interest1": $scope.formData.interest1})
+                        .success(function (data, status) {
                             $scope.status = status;
                             $scope.data = data;
                             $scope.message = "Thanks for your mail, we will get in touch shortly" //data; // Show result from server in our <pre></pre> element
-                    alert('for is valid');
+                    alert('form is valid');
                         })
             } else {
                 alert('Form is not valid');
