@@ -207,7 +207,7 @@ app.controller('myCtrl', ['$scope','$http', function($scope, $http)
 
 
       $scope.formData={};  
-      $scope.url = 'https://github.com/mailer.php';
+      $scope.url = 'https://github.com/hrnetworks/mailer.php';
     $scope.formSubmit = function(isValid){
 
             if (isValid) {
