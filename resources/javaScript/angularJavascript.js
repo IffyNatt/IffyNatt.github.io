@@ -211,18 +211,27 @@ app.controller('myCtrl', ['$scope','$http', function($scope, $http)
     $scope.formSubmit = function(isValid){
 
             if (isValid) {
-                $.post($scope.url, {"name": $scope.formData.name, "email": $scope.formData.email, "size": $scope.formData.size, "interest1": $scope.formData.interest1},
-                        function (response, status) {
-                            $scope.status = status;
-                            //$scope.data = data;
-                            $scope.message = response //data; // Show result from server in our <pre></pre> element
-                    alert('form is valid');
-                        })
-            } else {
-                alert('Form is not valid');
-            }
- 
-        }
+            $http({
+              method  : 'POST',
+              url     : 'process.php',
+              data    : $.param($scope.formData),  // pass in data as strings
+              headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+             })
+              .success(function(data) {
+                console.log(data);
+
+                if (!data.success) {
+                  // if not successful, bind errors to error variables
+                  $scope.errorName = data.errors.name;
+                  $scope.errorSuperhero = data.errors.superheroAlias;
+                } else {
+                  // if successful, bind success message to message
+                  $scope.message = data.message;
+                }
+              });
+
+        };
+    };
                 
 
     
