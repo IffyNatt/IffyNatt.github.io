@@ -207,16 +207,15 @@ app.controller('myCtrl', ['$scope','$http', function($scope, $http)
 
 
       $scope.formData={};  
-      $scope.url = 'mailer.php';
+      $scope.url = 'https://github.com/mailer.php';
     $scope.formSubmit = function(isValid){
 
             if (isValid) {
-                $http.post($scope.url, {"name": $scope.formData.name, "email": $scope.formData.email, 
-                                       "size": $scope.formData.size, "interest1": $scope.formData.interest1})
-                        .success(function (data, status) {
+                $.post($scope.url, {"name": $scope.formData.name, "email": $scope.formData.email, "size": $scope.formData.size, "interest1": $scope.formData.interest1},
+                        function (response, status) {
                             $scope.status = status;
-                            $scope.data = data;
-                            $scope.message = "Thanks for your mail, we will get in touch shortly" //data; // Show result from server in our <pre></pre> element
+                            //$scope.data = data;
+                            $scope.message = response //data; // Show result from server in our <pre></pre> element
                     alert('form is valid');
                         })
             } else {
